@@ -37,13 +37,13 @@ def add_xref_table(pdf):
     return pdf
 
 if len(sys.argv) != 5:
-    print("Usage: jhpdf.py jekyll.jpg hyde.jpg trigger.js output.pdf")
+    print("Usage: jhpdf.py jekyll.jpg hyde.jpg condition.js output.pdf")
     sys.exit(1)
 
-jekyll  = sys.argv[1]
-hyde    = sys.argv[2]
-trigger = sys.argv[3]
-output  = sys.argv[4]
+jekyll    = sys.argv[1]
+hyde      = sys.argv[2]
+condition = sys.argv[3]
+output    = sys.argv[4]
 
 # read in XFA template and put base64-encoded images at the correct place
 xfa = open('xfa_template.xml', 'rb').read()
@@ -53,7 +53,7 @@ xfa = xfa.replace(b'[[IMG1]]', jekyll_b64).replace(b'[[IMG2]]', hyde_b64)
 
 # read PDF template and insert JS code
 pdf = open('pdf_template.pdf', 'rb').read()
-js = read_js(trigger)
+js = read_js(condition)
 pdf = pdf.replace(b'[[JS]]', js)
 
 # insert XFA into PDF and add xref table
