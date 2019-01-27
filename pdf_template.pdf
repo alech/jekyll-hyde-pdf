@@ -69,7 +69,7 @@ endobj
 <config xmlns='http://www.xfa.org/schema/xci/3.0/'>
   <present>
     <pdf>
-      <interactive>1</interactive>
+      <interactive>0</interactive>
     </pdf>
   </present>
   <acrobat>
