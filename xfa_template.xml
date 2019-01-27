@@ -1,0 +1,26 @@
+<template xmlns="http://www.xfa.org/schema/xfa-template/2.8/">
+    <subform layout="tb" locale="en_US" name="mainform">
+        <pageSet>
+            <pageArea id="Page1" name="Page1">
+                <contentArea h="297mm" w="210mm" x="0in" y="0in"/>
+                <medium long="297mm" short="210mm" stock="default"/>
+            </pageArea>
+        </pageSet>
+        <subform h="297mm" w="210mm" name="subform">
+            <field name="ImageField1" w="210mm" h="297mm">
+                <value>
+                    <image aspect="fit" contentType="image/jpg" transferEncoding="base64">
+                        [[IMG1]]
+                    </image>
+                </value>
+            </field>
+            <field name="ImageField2" w="210mm" h="297mm" presence="invisible">
+                <value>
+                    <image aspect="fit" contentType="image/jpg" transferEncoding="base64">
+                        [[IMG2]]
+                    </image>
+                </value>
+            </field>
+        </subform>
+    </subform>
+</template>
